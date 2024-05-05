@@ -1,0 +1,73 @@
+<app-header></app-header>
+<ion-text class="title">
+  Offence Review
+</ion-text>
+<ion-row>
+  <ion-col>
+    <ion-button class="vehicle-type-button" fill="clear" [class.active]="vehicleType === 'Bike'"
+      [style.backgroundColor]="vehicleType === 'Bike' ? '#B2A8D2' : ''">Bike</ion-button>
+    <ion-button class="vehicle-type-button" fill="clear" [class.active]="vehicleType === 'car'"
+      [style.backgroundColor]="vehicleType === 'car' ? '#B2A8D2' : ''">Car</ion-button>
+    <!-- <ion-button (click)="ShareWhatsapp()">ShARE</ion-button> -->
+
+  </ion-col>
+</ion-row>
+<ion-content>
+  <ng-container *ngIf="vehicleType === 'Bike'">
+    <app-bike></app-bike>
+  </ng-container>
+  <ng-container *ngIf="vehicleType === 'car'">
+    <app-car></app-car>
+  </ng-container>
+</ion-content>
+  <ion-button id="open-modal" expand="full" class="share-button">
+    <ion-icon class="share-icon" name="share-social-outline"></ion-icon>
+  </ion-button>
+
+  <ion-modal trigger="open-modal" [breakpoints]="[0, 1]" [showHeader]="false" class="custom-modal">
+    <ng-template>
+      <span class="block"><strong>REPORT</strong></span>
+      <div class="social-icons">
+        <ion-button class="large-icon" color="success" (click)="ShareWhatsapp()" fill="clear" style="font-size: 2em;">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </ion-button>
+
+        <ion-button class="large-icon" color="primary" (click)="shareViaFacebook()" fill="clear"
+          style="font-size: 2em;">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
+
+        <ion-button class="large-icon" color="secondary" (click)="shareViaTwitter()" fill="clear"
+          style="font-size: 2em;">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </ion-button>
+      </div>
+
+      <div>
+        <ion-button class="ok-button" (click)="cancel()" shape="round" color="light">Cancel</ion-button>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <!-- <ion-modal id="example-modal" #modal trigger="open-modal">
+      <ng-template>
+        <ion-title>REPORT</ion-title>
+        <div class="social-icons">
+          <ion-button class="large-icon" color="success" fill="clear" style="font-size: 2em;">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </ion-button>
+    
+          <ion-button class="large-icon" color="primary" fill="clear" style="font-size: 2em;">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+    
+          <ion-button class="large-icon" color="secondary" fill="clear" style="font-size: 2em;">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </ion-button>
+        </div>
+    
+        <div class="cancelButtonOuter">
+          <ion-button class="cancelButton">Cancel</ion-button>
+        </div>
+      </ng-template>
+    </ion-modal> -->

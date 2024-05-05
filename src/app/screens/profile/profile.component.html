@@ -1,0 +1,167 @@
+<app-header></app-header>
+<ion-content class="profile-container">
+  <div class="profile-photo">
+    <img [src]="imageSource" alt="Profile Photo" />
+
+  </div>
+  <div class="camera-icon">
+    <ion-icon name="camera" size="large" (click)="takePicture()"></ion-icon>
+  </div>
+
+  <ion-card class="user-info-card">
+    <ion-card-content>
+      <div class="bio-item">
+        <ion-icon name="person" class="icon" slot="start"></ion-icon>
+        <div class="bio-info">
+          <ion-label class="bio-label">Full Name:</ion-label>
+          <ng-container *ngIf="!editableName; else editName">
+            <ion-label class="value">{{ name }}</ion-label>
+            <div class="name-edit-icon">
+              <ion-icon name="pencil" slot="end" (click)="toggleEdit('name')"></ion-icon>
+            </div>
+          </ng-container>
+          <ng-template #editName>
+            <div class="bio-input">
+              <input type="text" [(ngModel)]="editedName" (keypress)="onKeyPress($event)" maxlength="40" />
+              <div class="save-icon">
+                <ion-icon name="checkmark" color="success" slot="end" (click)="saveEdit('name')"></ion-icon>
+                <ion-icon name="close" color="danger" slot="end" (click)="cancelEdit('name')"></ion-icon>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <div class="bio-item">
+        <ion-icon name="call" class="icon" slot="start"></ion-icon>
+        <div class="bio-info">
+          <ion-label class="bio-label">Phone:</ion-label>
+          <span class="value">{{ phonenumber }}</span>
+        </div>
+      </div>
+      <div class="bio-item">
+        <ion-icon name="mail" class="icon" slot="start"></ion-icon>
+        <div class="bio-info">
+          <ion-label class="bio-label">Email:</ion-label>
+          <ng-container *ngIf="!editableEmail; else editEmail">
+            <span class="value">{{ email }}</span>
+            <div class="name-edit-icon">
+              <ion-icon name="pencil" slot="end" (click)="toggleEdit('email')"></ion-icon>
+            </div>
+          </ng-container>
+          <ng-template #editEmail>
+            <div class="bio-input">
+              <input class="text-input" type="email" [(ngModel)]="editedEmail" maxlength="40" required email />
+              <div class="save-icon">
+                <ion-icon name="checkmark" color="success" slot="end" (click)="saveEdit('email')"></ion-icon>
+                <ion-icon name="close" color="danger" slot="end" (click)="cancelEdit('email')"></ion-icon>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </ion-card-content>
+
+  </ion-card>
+
+  <!-- Second Ion Card for Address Information -->
+  <ion-card class="address-card">
+    <ion-card-header>
+      Address
+    </ion-card-header>
+    <ion-card-content>
+      <div class="address-item">
+        <ion-icon name="location-outline" class="icon"></ion-icon>
+        <div class="bio-info" style="white-space: nowrap;">
+          <ion-label class="bio-label">Address:</ion-label>
+          <ng-container *ngIf="!editableAddress; else editAddress">
+            <span class="value">{{ address }}</span>
+            <div class="name-edit-icon">
+              <ion-icon name="pencil" (click)="toggleEdit('address')"></ion-icon>
+            </div>
+          </ng-container>
+          <ng-template #editAddress>
+            <div class="bio-input">
+              <input class="text-input" type="text" [(ngModel)]="editedAddress" maxlength="84" />
+              <div class="save-icon">
+                <ion-icon name="checkmark" color="success" (click)="saveEdit('address')"></ion-icon>
+                <ion-icon name="close" color="danger" (click)="cancelEdit('address')"></ion-icon>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<!-- <ion-content  [fullscreen]="true" class="profile-content dark">
+  <div class="profile">
+    <div class="profile-photo">
+      <img [src]="imageSource" alt="Profile Photo" />
+    </div>
+    <div class="camera-icon">
+      <ion-icon name="camera" size="large" (click)="takePicture()"></ion-icon>
+    </div>
+  </div>
+
+  <div class="bio">
+    <p style="margin: 10px"><b>Personal Details</b></p>
+    <div class="bio-item">
+      <ion-icon name="person" class="icon"></ion-icon>
+      <div class="bio-info">
+        <span class="name-label">Full Name:</span>
+        <ng-container *ngIf="!editableName; else editName">
+          <span class="value">{{ name }}</span>
+          <ion-icon name="pencil" class="name-edit-icon" (click)="toggleEdit('name')"></ion-icon>
+        </ng-container>
+        <ng-template #editName>
+          <input type="text" [(ngModel)]="editedName" (keypress)="onKeyPress($event)" maxlength="40"/>
+          <ion-icon name="checkmark" class="save-icon" color="success" (click)="saveEdit('name')"></ion-icon>
+          <ion-icon name="close" class="close-icon" color="danger" (click)="cancelEdit('name')"></ion-icon>
+        </ng-template>
+      </div>
+    </div>
+    <div class="bio-item">
+      <ion-icon name="call" class="icon"></ion-icon>
+      <div class="bio-info">
+        <span class="phone-label">Phone:</span>
+        <span class="value">{{ phonenumber }}</span>
+      </div>
+    </div>
+    <div class="bio-item">
+      <ion-icon name="mail" class="icon"></ion-icon>
+      <div class="bio-info">
+        <span class="email-label">Email:</span>
+        <ng-container *ngIf="!editableEmail; else editEmail">
+          <span class="value">{{ email }}</span>
+          <ion-icon name="pencil" class="name-edit-icon" (click)="toggleEdit('email')"></ion-icon>
+        </ng-container>
+        <ng-template #editEmail>
+          <input class="text-input" type="email" [(ngModel)]="editedEmail" maxlength="40" required email/>
+          <ion-icon name="checkmark" class="save-icon" color="success" (click)="saveEdit('email')"></ion-icon>
+          <ion-icon name="close" class="close-icon" color="danger" (click)="cancelEdit('email')"></ion-icon>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="address">
+    <p style="margin: 10px"><b>Saved Address</b></p>
+
+    <div class="bio-item">
+      <ion-icon name="location-outline" class="icon"></ion-icon>
+      <div class="bio-info" style="white-space: nowrap;">
+        <span class="add-label">Address:</span>
+        <ng-container *ngIf="!editableAddress; else editAddress">
+          <span class="value">{{ address }}</span>
+          <ion-icon name="pencil" class="name-edit-icon" (click)="toggleEdit('address')"></ion-icon>
+        </ng-container>
+        <ng-template #editAddress>
+          <input class="text-input" type="text" [(ngModel)]="editedAddress" maxlength="84"/>
+          <ion-icon name="checkmark" class="save-icon" color="success" (click)="saveEdit('address')"></ion-icon>
+          <ion-icon name="close" class="close-icon" color="danger" (click)="cancelEdit('address')"></ion-icon>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</ion-content> -->
+<ion-button class="logut" (click)="logout()">Log Out</ion-button>

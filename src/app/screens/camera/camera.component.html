@@ -1,0 +1,29 @@
+
+<app-header></app-header>
+<ion-content>
+  <div class="image-container">
+    <img src="assets/images/report.jpg" alt="Background Image">
+  </div>
+  <div class="bottom-bar">
+    <div class="media-icon">
+      <label for="fileInput" class="icon-link">
+        <ion-icon name="images"></ion-icon>
+        Gallery
+      </label>
+      <input id="fileInput" type="file" #file (change)="browseFile(file.files)" accept="image/*, video/*"
+        style="display: none;">
+    </div>
+    <div class="icon-container">
+      <a class="icon-link" (click)="takePicture()">
+        <ion-icon name="camera"></ion-icon>
+        Camera
+      </a>
+    </div>
+    <div class="icon-container">
+      <a class="icon-link" (click)="captureVideo()">
+        <ion-icon name="videocam"></ion-icon>
+        Video
+      </a>
+    </div>
+  </div>
+</ion-content>

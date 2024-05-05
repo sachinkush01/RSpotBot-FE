@@ -1,0 +1,44 @@
+<ion-button
+id="open-modal"
+class="share-button-container"
+color="secondary"
+expand="full"
+>
+<ion-icon class="share-icon" name="share-social-outline"></ion-icon>
+</ion-button>
+<ion-modal
+  trigger="open-modal"
+  [breakpoints]="[0, 1]"
+  [showHeader]="false"
+  class="custom-modal"
+>
+  <ng-template>
+    <span class="block">Share </span>
+    <div class="social-icons">
+      <ion-button
+        class="large-icon"
+        color="success"
+      
+        ><ion-icon name="logo-whatsapp"></ion-icon
+      ></ion-button>
+
+      <ion-button
+        class="large-icon"
+        color="primary"
+        
+        ><ion-icon name="logo-facebook"></ion-icon
+      ></ion-button>
+
+      <ion-button
+        class="large-icon"
+        color="secondary"
+        
+        ><ion-icon name="logo-twitter"></ion-icon
+      ></ion-button>
+    </div>
+
+    <div class="cancelButtonOuter">
+      <ion-button class="cancelButton" >Cancel</ion-button>
+    </div>
+  </ng-template>
+</ion-modal>

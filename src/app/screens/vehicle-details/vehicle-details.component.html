@@ -1,0 +1,82 @@
+<ion-header class="custom-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/camera"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      RSpotBot
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openSettings($event)" style="color: rgb(77, 75, 75);">
+        <ion-icon slot="icon-only" name="settings-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-text style="margin-left: 10px; margin-top: 10px; font-size: medium; font-weight: bold;">
+  Offence Review
+</ion-text>
+
+<ion-row>
+  <ion-col>
+    <ion-button class="vehicle-type-button" fill="clear" [class.active]="vehicleType === 'Bike'"
+      [style.backgroundColor]="vehicleType === 'Bike' ? '#B2A8D2' : ''">Bike</ion-button>
+    <ion-button class="vehicle-type-button" fill="clear" [class.active]="vehicleType === 'car'"
+      [style.backgroundColor]="vehicleType === 'car' ? '#B2A8D2' : ''">Car</ion-button>
+  </ion-col>
+</ion-row>
+
+<ion-content>
+  <ng-container *ngIf="vehicleType === 'Bike'">
+    <app-bike></app-bike>
+  </ng-container>
+  <ng-container *ngIf="vehicleType === 'car'">
+    <app-car></app-car>
+  </ng-container>
+ 
+    <ion-textarea class="comment-box" rows="2" placeholder="Description" [(ngModel)]="comment"></ion-textarea>
+
+</ion-content>
+
+
+<!-- <ion-content>
+  <ion-button>
+    <div class="spark-icon"><ion-icon name="sparkles" id="open-modal"></ion-icon>
+    </div>
+  </ion-button> -->
+  <ion-button (click)="presentActionSheet()" expand="full"
+[disabled]="responseData['liscence plate number'] === '-----'">
+<ion-icon class="share-icon" name="share-social-outline"></ion-icon>
+</ion-button>
+  <ion-modal trigger="open-modal" [breakpoints]="[0, 1]" [showHeader]="false" class="custom-modal">
+<ng-template>
+  <span class="block">Share </span>
+  <div class="social-icons">
+    <ion-button class="large-icon" color="success" (click)="shareViaWhatsApp()"><ion-icon
+        name="logo-whatsapp"></ion-icon></ion-button>
+
+    <ion-button class="large-icon" color="primary" (click)="shareViaFacebook()"><ion-icon
+        name="logo-facebook"></ion-icon></ion-button>
+
+    <ion-button class="large-icon" color="secondary" (click)="shareViaTwitter()"><ion-icon
+        name="logo-twitter"></ion-icon></ion-button>
+  </div>
+  <div class="cancelButtonOuter">
+    <ion-button class="cancelButton" (click)="cancel()">Cancel</ion-button>
+  </div>
+</ng-template>
+</ion-modal>
+
+  <!-- Model popup -->
+  <!-- <ion-modal trigger="open-modal" [breakpoints]="[0, 1]" [showHeader]="false" class="custom-modal">
+    <ng-template>
+      <h6 class="pop-text">This process might take few minutes.Enhanced media will appear in your dashboard.Meanwhile
+        you can keep usingapplication.</h6>
+      <div>
+        <ion-button class="ok-button" (click)="cancel()" shape="round" color="light">Ok</ion-button>
+      </div>
+    </ng-template>
+
+  </ion-modal>
+</ion-content> -->

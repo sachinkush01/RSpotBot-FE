@@ -1,0 +1,34 @@
+{
+  "modelTopology": {
+    "keras_version": "2.3.0",
+    "backend": "tensorflow",
+    "model_config": {
+      "class_name": "Model",
+      "config": {
+        "layers": [
+          {
+            "name": "input_1",
+            "class_name": "InputLayer",
+            "config": {
+              "batch_input_shape": [null, 224, 224, 3],
+              "dtype": "float32",
+              "name": "input_1",
+              "sparse": false
+            }
+          },
+          {
+            "name": "mobilenetv2_1.00_224",
+            "class_name": "Functional",
+            "config": {
+              "name": "mobilenetv2_1.00_224",
+              "layers": [],
+              "input_layers": [["input_1", 0, 0]],
+              "output_layers": [["reshape_1", 0, 0]]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "format": "layers-model"
+}

@@ -1,0 +1,38 @@
+<app-header></app-header>
+<ion-content>
+  <ion-searchbar [debounce]="1000" class="search"></ion-searchbar>
+  <div class="table-responsive">
+ <table class="table table-hover table-striped" style="font-size: small;">
+  <thead class="table-active">
+    <tr style="text-align: center;">
+      <th scope="col" style="width: 22%;">Date</th>
+      <th scope="col">Lic.Plate</th>
+      <th scope="col">Status</th>
+      <th scope="col">Offences</th>
+    </tr>
+  </thead>
+  <tbody style="text-align: center;">
+    <tr>
+      <th>01-10-23</th>
+      <td>DL-12-3234</td>
+      <td>Reported</td>
+      <td><a (click)="openModal($event)" style="color:blue;">View</a></td>
+    </tr>
+    <tr>
+      <th>01-10-23 </th>
+      <td>DL-12-3234</td>
+      <td>In Progress</td>
+      <td><a (click)="openModal($event)" style="color:blue;">View</a></td>
+    </tr>
+    <tr>
+      <th>01-10-23 </th>
+      <td>DL-12-3234</td>
+      <td>Reported</td>
+      <td><a (click)="openModal($event)" style="color:blue;">View</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+</ion-content>

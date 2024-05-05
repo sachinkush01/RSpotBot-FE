@@ -1,0 +1,41 @@
+<ion-content class="custom-background" scroll-y="false">
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="12" size-md="8" size-lg="6" size-xl="4" size-xxl="3">
+        <div class="circle-container">
+          <div class="circle">
+            <img src="assets/images/signin.png" alt="Circle Image" />
+          </div>
+        </div>
+        <ion-text>
+          <p class="enter-num">Enter Your Mobile Number</p>
+        </ion-text>
+        <div class="input-div">
+          <ion-item class="ion-input">
+            <ion-input
+              label="+91"
+              type="tel"
+              placeholder="Phone No."
+              class="input-box"
+              [(ngModel)]="phoneNumber"
+              maxlength="10"
+              minlength="10"
+            ></ion-input>
+          </ion-item>
+        </div>
+        <div id="sign-in-button"></div>
+
+        <ion-text>
+          <p class="notification-msg">
+            We will send you ONE time SMS message. Carrier charges may apply.
+          </p>
+        </ion-text>
+        <div class="button-div">
+          <ion-button (click)="toDetail()" shape="round" color="light"
+            >Next</ion-button
+          >
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

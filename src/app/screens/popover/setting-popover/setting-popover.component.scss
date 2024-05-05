@@ -1,0 +1,27 @@
+popover-content {
+    border-radius: 4px;
+    transform-origin: left top;
+    margin-left: 112px;
+    height: 120px;
+    width: 180px;
+}
+// .custom-item {
+//     --margin-bottom: 4px; 
+//     --inner-padding-bottom:-10px;
+//   }
+  .list-group-item {
+    position: relative;
+    display: block;
+    padding: 6px 10px;
+    margin-bottom: -1px;
+    background: rgba(217, 217, 217, 0.40);
+    margin-top: 1px;
+    font-size: medium;
+}
+.list-group-item-white{
+    padding: 6px 10px;
+    margin-top: 1px;
+    font-size: medium;
+}
+
+  

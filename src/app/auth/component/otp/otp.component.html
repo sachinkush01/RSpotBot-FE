@@ -1,0 +1,40 @@
+<ion-content class="custom-background" scroll-y="false">
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="12" size-md="8" size-lg="6" size-xl="4" size-xxl="3">
+        <div class="circle-container">
+          <div class="circle">
+            <img src="assets/images/otp.png" alt="Circle Image">
+          </div>
+        </div>
+        <!-- <div class="title-div"> -->
+          <ion-text>
+            <p class="title">Enter your verification code</p>
+          </ion-text>
+        <!-- </div> -->
+        <div class="otpInput">
+          <ngx-otp-input [config]="config" (fill)="handleFillEvent($event)">
+          </ngx-otp-input>
+        </div>
+        <p class="error-message" color="danger" *ngIf="otpError">
+          Invalid OTP. Please enter a valid OTP.
+        </p>
+      
+          <ion-text>
+            <p class="otp-info"> A verification code has been sent to your phone number.</p>
+          </ion-text>
+         
+        
+        <div class="button-div">
+          <ion-button class="otp-button" (click)="verifyOTP()" shape="round" color="light">Verify</ion-button>
+        </div>
+        <p class="resend-info">
+          Didn't receive the code?
+          <span id="resend-link" *ngIf="!isResendButtonDisabled && !isResendLinkClicked" (click)="resendOtp()"
+            class="resend-link">Resend</span>
+          <span *ngIf="isResendButtonDisabled">Resend in 00:{{ timer }}</span>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

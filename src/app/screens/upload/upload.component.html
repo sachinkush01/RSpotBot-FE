@@ -1,0 +1,67 @@
+<ion-header class="custom-header">
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="/camera" style="font-weight: bold; color: rgb(77, 75, 75);"></ion-back-button>
+    </ion-buttons> -->
+    <ion-title style="font-weight: bold; color:rgb(77, 75, 75);">
+      RSpotBot
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openSettings($event)" style="color: rgb(77, 75, 75);">
+        <ion-icon slot="icon-only" name="settings-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div #mediaContainer style="position: relative; width: 100%; height: 85%;" (touchstart)="getCoordinates($event)">
+    <ng-container *ngIf="mediaType === 'image'">
+      <img #media [src]="mediaSrc" style="width: 100%; height: 96%; object-fit: cover;">
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <ion-button (click)="uploadData()" class="upload-button">Upload</ion-button>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="mediaType === 'video'">
+      <video #video [src]="mediaSrc" controls style="width: 100%; height: 96%; object-fit: cover;"></video>
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <ion-button (click)="uploadData()" class="upload-button">Upload</ion-button>
+        <ion-button (click)="trimVideo()" color="secondary">Trim</ion-button>
+        <!-- <ion-button (click)="downloadTrimmedVideo()">Download</ion-button> -->
+      </div>
+    </ng-container>
+    <div *ngIf="boundingBoxVisible" class="bounding-box" [style.top]="boundingBoxStyle.top"
+      [style.left]="boundingBoxStyle.left"></div>
+  </div>
+
+  <!-- <ion-button (click)="playRecording()" [disabled]="!recordedData">Play</ion-button> -->
+  <div class="bottom-bar">
+    <div class="circle">
+      <ion-icon name="color-wand-outline" class="custom-icon"></ion-icon>
+    </div>
+    <div class="spark-circle">
+      <div class="spark-icon"><ion-icon name="sparkles" id="open-modal"></ion-icon>
+      </div>
+      <span class="spark-text">Enhance</span>
+    </div>
+    <div class="circle">
+      <ion-icon name='mic' class="custom-icon"></ion-icon>
+      <!-- <div class="icon-container">
+      <a class="icon-link" (touchstart)="startRecording()" (touchend)="stopRecording()" (mousedown)="startRecording()"
+        (mouseup)="stopRecording()" (touchcancel)="stopRecording()" (mouseleave)="stopRecording()">
+        <ion-icon name='mic' class="record-icon" [class.enlarged]="isRecording"></ion-icon>
+      </a>
+    </div> -->
+    </div>
+  </div>
+  <ion-modal trigger="open-modal" [breakpoints]="[0, 1]" [showHeader]="false" class="custom-modal">
+    <ng-template>
+      <h6 class="pop-text">This process might take few minutes.Enhanced media will appear in your dashboard.Meanwhile
+        you can keep usingapplication.</h6>
+      <div>
+        <ion-button class="ok-button" (click)="cancel()" shape="round" color="light">Ok</ion-button>
+      </div>
+    </ng-template>
+
+  </ion-modal>
+</ion-content>

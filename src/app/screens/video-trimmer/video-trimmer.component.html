@@ -1,0 +1,24 @@
+<div class="icon-container">
+  <label for="fileInput" class="icon-link">
+    Gallery
+  </label>
+  <input id="fileInput" type="file" #file (change)="browseFile(file.files)" accept="image/*, video/*"
+    style="display: none;">
+</div>
+
+<div #mediaContainer style="position: relative; width: 100%; height: 85%;" (touchstart)="getCoordinates($event)" class="video-container">
+
+  <video #video [src]="videoSrc" controls ></video>
+  <button (click)="trimVideo()">Trim Video</button>
+  <button (click)="downloadTrimmedVideo()">Download Trimmed Video</button>
+  <div *ngIf="boundingBoxVisible" class="bounding-box" [style.top]="boundingBoxStyle.top"
+[style.left]="boundingBoxStyle.left"></div>
+  <div class="loader" [ngClass]="{'active': enableRecord}">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>

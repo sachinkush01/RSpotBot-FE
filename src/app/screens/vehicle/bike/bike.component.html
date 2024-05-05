@@ -1,0 +1,317 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="margin-top: -15px;">
+        <ion-card>
+          <ion-card-header>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <ion-card-subtitle>
+                <ion-label>License Plate Number:</ion-label>
+                <ng-container *ngIf="!editingLicensePlate; else editModeView">
+                  <ion-label>{{ responseData["liscence plate number"] }}</ion-label>
+                </ng-container>
+                <ng-template #editModeView>
+                  <input [(ngModel)]="editedLicensePlate" placeholder="Enter License Plate" class="license-plate-input"
+                    maxlength="14" />
+                </ng-template>
+              </ion-card-subtitle>
+              <ion-icon *ngIf="!editingLicensePlate; else editModeButtons" name="pencil" class="pencil-icon"
+                (click)="startEditingLicensePlate()"></ion-icon>
+              <ng-template #editModeButtons>
+                <ion-icon class="check-icon" color="success" name="checkmark"
+                  (click)="saveEditedLicensePlate()"></ion-icon>
+                <ion-icon class="check-icon" color="danger" name="close"
+                  (click)="cancelEditingLicensePlate()"></ion-icon>
+              </ng-template>
+            </div>
+          </ion-card-header>
+          <div class="main-card">
+
+            <ion-item color="newcolor" lines="none">
+              <img class="offence-image" src="assets/images/triplling.png" alt="Tripling" />
+              <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                [checked]="offenses.triplingDetection">Tripling</ion-toggle>
+
+            </ion-item>
+            <ion-item color="newcolor" lines="none">
+              <img class="offence-image" src="assets/images/helmet.png" alt="Helmet" />
+              <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                [checked]="offenses.helmetDetection">Helmet</ion-toggle>
+            </ion-item>
+          </div>
+        </ion-card>
+
+        <div class="secondry-card-container">
+          <ion-card class="secondry-card">
+            <div class="card-content">
+              <ion-item color="newcolor" lines="none">
+                <img class="secondry-image" src="assets/images/phone.png" alt="Mobile" />
+                <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                  [checked]="offenses.cellphoneUsage">Mobile Phone<br> Usage</ion-toggle>
+              </ion-item>
+            </div>
+
+          </ion-card>
+          <ion-card class="secondry-card">
+            <div class="card-content">
+              <ion-item color="newcolor" lines="none">
+                <img class="secondry-image" src="assets/images/red-light-jump.png" alt="redlight" />
+                <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                  [checked]="offenses.redLightJump">Red Light<br> Jump</ion-toggle>
+              </ion-item>
+            </div>
+          </ion-card>
+          <ion-card class="secondry-card">
+            <div class="card-content">
+              <ion-item color="newcolor" lines="none">
+                <img class="secondry-image" src="assets/images/blacksmoke.png" alt="black-smoke" />
+                <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                  [checked]="offenses.blackSmokeEmission">Black Smoke<br> Emission</ion-toggle>
+              </ion-item>
+            </div>
+          </ion-card>
+          <ion-card class="secondry-card">
+            <div class="card-content">
+              <ion-item color="newcolor" lines="none">
+                <img class="secondry-image" src="assets/images/improper.png" alt="Improper" />
+                <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                  [checked]="offenses.improperNumberPlate">Improper<br> Number Plate</ion-toggle>
+              </ion-item>
+            </div>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- 
+          <div >
+            <div>
+              <div (click)="handleImageClick('Tripling')">
+                <img class="offence-image" src="assets/images/triplling.png" alt="Tripling" />
+                <ion-text class="offence-name">Tripling</ion-text>
+                <ion-toggle aria-label="Success toggle" color="success"
+                  [checked]="offenses.triplingDetection"></ion-toggle>
+              </div>
+            </div>
+
+            <div>
+              <div (click)="handleImageClick('Helmet')">
+                <img class="offence-image" src="assets/images/helmet.png" alt="Helmet" />
+                <ion-text class="offence-name">No Helmet</ion-text>
+                <ion-toggle  aria-label="Success toggle" color="success"
+                  [checked]="offenses.helmetDetection"></ion-toggle>
+              </div>
+            </div>
+          </div> -->
+  <!-- <div class="offence">
+            <div  (click)="handleImageClick('Helmet')">
+              <img
+              class="offence-image"                src="assets/images/improper.png"
+                alt="Helmet"
+              />
+              <div class="offence-type">
+                Improper Number Plate
+              </div>
+              <ion-toggle
+                style="margin-left: 89px;"
+                aria-label="Success toggle"
+                color="success"
+                [checked]="offenses.helmetDetection"
+              ></ion-toggle>
+            </div>
+          </div>
+          <div class="offence">
+            <div  (click)="handleImageClick('Helmet')">
+              <img
+              class="offence-image"
+                src="assets/images/phone.png"
+                alt="Helmet"
+              />
+              <ion-text class="offence-name" >Mobile phone Usage</ion-text>
+              <ion-toggle
+                aria-label="Success toggle"
+                color="success"
+                [checked]="offenses.helmetDetection"
+              ></ion-toggle>
+            </div>
+          </div>
+          <div class="offence">
+            <div (click)="handleImageClick('Helmet')">
+              <img
+              class="offence-image"
+                src="assets/images/helmet.png"
+                alt="Helmet"
+              />
+              <ion-text class="offence-name">Pollution Expired</ion-text>
+              <ion-toggle
+                aria-label="Success toggle"
+                color="success"
+                [checked]="offenses.helmetDetection"
+              ></ion-toggle>
+            </div>
+          </div>
+          <div class="offence">
+            <div (click)="handleImageClick('Helmet')">
+              <img
+              class="offence-image"                src="assets/images/insaurance.png"
+                alt="Helmet"
+              />
+              <ion-text class="offence-name">Insurance Expired</ion-text>
+              <ion-toggle
+                style="margin-left: 89px;"
+                aria-label="Success toggle"
+                color="success"
+                [checked]="offenses.helmetDetection"
+              ></ion-toggle>
+            </div> -->
+  <!-- </div> -->
+
+  <!-- <ion-grid>
+    <ion-row>
+      <div class="bio">
+        <ion-grid style="margin-left: 5px; margin-top: -5px;">
+          <ion-row>
+            <ion-text style="margin: 10px; font-size: medium;">Plate Number:</ion-text>
+            <ng-container *ngIf="!editingLicensePlate; else editModeView">
+              <ion-label style="margin: 10px;font-size: medium;">
+                {{ responseData["liscence plate number"] }}
+              </ion-label>
+            </ng-container>
+            <ng-template #editModeView>
+              <input
+                [(ngModel)]="editedLicensePlate"
+                placeholder="Enter License Plate"
+                class="license-plate-input"
+                maxlength="14"
+              />
+            </ng-template>
+            <ng-container *ngIf="!editingLicensePlate; else editModeButtons">
+              <ion-icon
+                name="pencil"
+                class="pencil-icon"
+                (click)="startEditingLicensePlate()"
+              ></ion-icon>
+            </ng-container>
+            <ng-template #editModeButtons>
+              <ion-icon
+                class="check-icon"
+                color="success"
+                name="checkmark"
+                (click)="saveEditedLicensePlate()"
+              ></ion-icon>
+              <ion-icon
+                class="close-icon"
+                color="danger"
+                name="close"
+                (click)="cancelEditingLicensePlate()"
+              ></ion-icon>
+            </ng-template>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid style="margin-left: -5px; margin-top: -11px;">
+          <ion-row>
+            <div class="triplling">
+              <div style="margin-top: 5px " (click)="handleImageClick('Tripling')">
+                <img
+                  style="margin-left: 15px; width: 52px; height: 50px; margin-top: -7px;"
+                  src="assets/images/triplling.png"
+                  alt="Tripling"
+                />
+                <ion-text style="margin-left: 15px; font-size: medium;">Tripling</ion-text>
+                <ion-toggle
+                  style="margin-left: 110px;"
+                  aria-label="Success toggle"
+                  color="success"
+                  [checked]="offenses.triplingDetection"
+                ></ion-toggle>
+              </div>
+            </div>
+          </ion-row>
+          <ion-row>
+            <div class="helmet">
+              <div style="margin-top: 20px " (click)="handleImageClick('Helmet')">
+                <img
+                  style="margin-left: 15px; width:52px; height:50px; margin-top: -7px;"
+                  src="assets/images/helmet.png"
+                  alt="Helmet"
+                />
+                <ion-text style="margin-left: 15px; font-size: medium">Insurance Expired</ion-text>
+                <ion-toggle
+                  style="margin-left: 89px;"
+                  aria-label="Success toggle"
+                  color="success"
+                  [checked]="offenses.helmetDetection"
+                ></ion-toggle>
+              </div>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-row>
+  </ion-grid>
+
+  <div class="cellphone">
+    <div style="margin-top: 20px " (click)="handleImageClick('Cellphone')">
+      <img
+        style="margin-left: 12px; width:70px; height:42px; margin-top: -18px;"
+        src="assets/images/cellphone.png"
+        alt="Cellphone"
+      />
+      <div class="offence-type">
+        Cellphone Usage
+      </div>
+      <div class="offence-toggle">
+        <ion-toggle aria-label="Success toggle" color="success" [checked]="offenses.cellphoneUsage"></ion-toggle>
+      </div>
+    </div>
+  </div>
+
+  <div class="redlight">
+    <div style="margin-top: 20px " (click)="handleImageClick('Red Light Jump')">
+      <img
+        style="margin-left: 12px; width:70px; height:42px; margin-top: -18px; border-radius: 30px;"
+        src="assets/images/red-light.jpg"
+        alt="Red Light Jump"
+      />
+      <div class="offence-type">
+        Red Light jump
+      </div>
+      <div class="offence-toggle">
+        <ion-toggle aria-label="Success toggle" color="success" [checked]="offenses.redLightJump"></ion-toggle>
+      </div>
+    </div>
+  </div>
+
+  <div class="black-smoke">
+    <div style="margin-top: 20px " (click)="handleImageClick('Black Smoke Emission')">
+      <img
+        style="margin-left: 12px; width:70px; height:42px; margin-top: -18px;"
+        src="assets/images/blacksmoke.png"
+        alt="Black Smoke Emission"
+      />
+      <div class="offence-type" style="width: 162px; margin-top: -40px">
+        Black Smoke Emission
+      </div>
+      <div class="offence-toggle" style="margin-top: -26px;">
+        <ion-toggle aria-label="Success toggle" color="success" [checked]="offenses.blackSmokeEmission"></ion-toggle>
+      </div>
+    </div>
+  </div>
+
+  <div class="improper-plate">
+    <div style="margin-top: 20px " (click)="handleImageClick('Improper Number Plate')">
+      <img
+        style="margin-left: 12px; width:70px; height:42px; margin-top: -18px; "
+        src="assets/images/improper.png"
+        alt="Improper Number Plate"
+      />
+      <div class="offence-type" style="width: 162px; margin-top: -40px;">
+        Improper Number Plate
+      </div>
+      <div class="offence-toggle" style="margin-top: -26px;">
+        <ion-toggle aria-label="Success toggle" color="success" [checked]="offenses.improperNumberPlate"></ion-toggle>
+      </div>
+    </div>
+  </div> -->
+</ion-content>

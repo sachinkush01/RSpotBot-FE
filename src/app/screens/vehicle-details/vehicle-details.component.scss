@@ -1,0 +1,174 @@
+
+ion-toolbar {
+  --background:  rgba(178, 168, 210, 0.84);
+}
+ion-back-button{
+  font-weight: bold; color: rgb(77, 75, 75);
+}
+ion-title{
+  font-weight: bold; color:rgb(77, 75, 75);
+}
+
+buttons .my-custom-class{
+  color: aqua;
+}
+.comment-box {
+  border-radius: 20px;
+  margin-top: -158px;
+  margin-left: 22px;
+  width: 315px;
+  height: 85px;
+  flex-shrink: 5px;
+  border: 1px solid #000;
+  background: rgba(178, 168, 210, 0.35);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+.share-button {
+  height: 50px;
+  margin-top: -54px;
+  --background:  rgba(178, 168, 210, 0.84);
+}
+.share-icon {
+  height: 38px;
+  width: 42px;
+}
+.block {
+  font-size: 20px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --border-radius: 10px;
+}
+// ion-modal {
+//   --height: 30%;
+//   --width: 90%;
+//   --border-radius: 10px;
+// }
+.social-icons {
+  border-radius: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   .ion-content {
+//     background-color: #333333; /* Dark mode background color */
+//     color: #ffffff; /* Dark mode text color */
+//   }
+
+//   .vehicle-type-button {
+//     background-color: white; /* Dark mode background color for buttons */
+//     color: #fff; /* Dark mode text color for buttons */
+//   }
+
+//   .image-container {
+//     display: flex;
+//     justify-content: space-between;
+//     margin-left: 20px;
+//     margin: 20px;
+//     margin-top: 100px;
+//     flex-shrink: 0;
+//     background-color: transparent; /* Set the background color to transparent */
+//   }
+
+//   .image-button {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     cursor: pointer;
+//     margin-bottom: 20px;
+//     background-color: transparent; /* Set the background color to transparent */
+//   }
+//   .image-button span {
+//     margin-top: 8px;
+//     font-size: 12.5px;
+//     // font-weight: bold;
+//     color: #fff; /* Set the text color to white */
+//   }
+//   .image-button img {
+//     filter: invert(1); /* Invert the image color to white */
+//   }
+//   .comment-box {
+//     border: 1px solid #9e9b9b;
+//     border-radius: 1px;
+//     padding: 8px;
+//     resize: none;
+//     margin-top: -158px;
+//     margin-bottom: 40px;
+//     margin-left: 10px;
+//     height: 140px;
+//     width: 340px;
+//     background-color: #1e1e1e; /* Set a dark background color */
+//     color: #ffffff; /* Set the text color to white */
+//     outline: none;
+//   }
+// }
+
+
+@media (max-width: 768px) {
+  .vehicle-type-button {
+    height: 30px;
+    width: 50px;
+    --color: black;
+    border-radius: 5px;
+    --border-color: #B2A8D2;
+    --border-style: solid;
+    --border-width: 1px;
+    margin-left: 20px;
+    margin-top: 3px;
+    text-align: center;
+  }
+  // .label {
+  //   font-weight: bold;
+  //   margin-right: 10px;
+  // }
+  .image-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  // .comment-box {
+  //   width: 100%; /* Adjust the width based on your design */
+  //   border: 1px solid #9E9B9B;
+  //   border-radius: 1px;
+  //   padding: 8px;
+  //   resize: none;
+  //   margin-top: 10px;
+  //   margin-bottom: 40px;
+  //   margin-left: 10px;
+  //   // height: 140px;
+  //   // width: 340px;
+  //   background-color:#F5F5F5; ;
+  //   outline: none;
+  // }
+
+  // .comment-box {
+  //   height: 140px;
+  //   width: 390px;
+  //   margin-left: 5px; /* Adjust margin as needed */
+  //   margin-right: 5px; /* Adjust margin as needed */
+  //   margin-top: 5em;
+  //   font-size: 14px; /* Adjust font size as needed */
+  // }
+}
+
+.cancelButtonOuter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cancelButton {
+  --background: lightgrey;
+  --color: black;
+  height: 45px;
+  width: 50%;
+  font-weight: 600;
+  position: relative;
+  top: -3px;
+}

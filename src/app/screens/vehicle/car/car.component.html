@@ -1,0 +1,172 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col >
+        <ion-card>
+          <ion-card-header>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <ion-card-subtitle>
+                <ion-label>License Plate Number : </ion-label>
+                <ng-container *ngIf="!editingLicensePlate; else editModeView">
+                  <ion-label>{{ responseData["liscence plate number"] }}</ion-label>
+                </ng-container>
+                <ng-template #editModeView>
+                  <input [(ngModel)]="editedLicensePlate" placeholder="Enter License Plate" class="license-plate-input" maxlength="14" />
+                </ng-template>
+              </ion-card-subtitle>
+              <ion-icon *ngIf="!editingLicensePlate; else editModeButtons" name="pencil" class="pencil-icon" (click)="startEditingLicensePlate()"></ion-icon>
+              <ng-template #editModeButtons>
+                <ion-icon class="check-icon" color="success" name="checkmark" (click)="saveEditedLicensePlate()"></ion-icon>
+                <ion-icon class="check-icon" color="danger" name="close" (click)="cancelEditingLicensePlate()"></ion-icon>
+              </ng-template>
+            </div>
+          </ion-card-header>
+        </ion-card>
+        <div class="secondry-card-container">
+          <ion-card class="secondry-card">
+            <div class="card-content">
+              <ion-item color="newcolor" lines="none">
+                <img class="secondry-image" src="assets/images/phone.png" alt="Mobile" />
+                <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                  [checked]="offenses.cellphoneUsage">Mobile Phone<br> Usage</ion-toggle>
+              </ion-item>
+            </div>
+
+          </ion-card>
+          <ion-card class="secondry-card">
+            <div class="card-content">
+              <ion-item color="newcolor" lines="none">
+                <img class="secondry-image" src="assets/images/black tint.png" alt="Improper" />
+                <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                  [checked]="offenses.improperNumberPlate">Black Tinted<br>Windows</ion-toggle>
+              </ion-item>
+            </div>
+          </ion-card>
+          <ion-card class="secondry-card">
+            <div class="card-content">
+              <ion-item color="newcolor" lines="none">
+                <img class="secondry-image" src="assets/images/red-light-jump.png" alt="redlight" />
+                <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                  [checked]="offenses.redLightJump">Red Light<br> Jump</ion-toggle>
+              </ion-item>
+            </div>
+          </ion-card>
+          <ion-card class="secondry-card">
+            <div class="card-content">
+              <ion-item color="newcolor" lines="none">
+                <img class="secondry-image" src="assets/images/blacksmoke.png" alt="black-smoke" />
+                <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                  [checked]="offenses.blackSmokeEmission">Black Smoke<br> Emission</ion-toggle>
+              </ion-item>
+            </div>
+          </ion-card>
+          <ion-card class="secondry-card">
+            <div class="card-content">
+              <ion-item color="newcolor" lines="none">
+                <img class="secondry-image" src="assets/images/improper.png" alt="Improper" />
+                <ion-toggle justify="space-between" class="toggle" aria-label="Success toggle" color="success"
+                  [checked]="offenses.improperNumberPlate">Improper<br> Number Plate</ion-toggle>
+              </ion-item>
+            </div>
+          </ion-card>
+          <div class="comment-box-container">
+            <ion-textarea class="comment-box" rows="2" placeholder="Description" [(ngModel)]="comment"></ion-textarea>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+  
+
+<!-- <ion-content>
+  <ion-grid>
+    <ion-row>
+      <div class="bio">
+        <ion-grid style="margin-left: 5px; margin-top: 10px;">
+          <ion-row>
+            <ion-text style="margin: 10px; font-size: medium;" >Plate Number:</ion-text>
+            <ng-container *ngIf="!editingLicensePlate; else editModeView">
+              <ion-label style="margin: 10px; font-size: medium;">
+                {{responseData["liscence plate number"]}}
+              </ion-label>
+            </ng-container>
+            <ng-template #editModeView>
+              <input [(ngModel)]="editedLicensePlate" placeholder="Enter License Plate" class="license-plate-input" maxlength="14"/>
+            </ng-template>
+            <ng-container *ngIf="!editingLicensePlate; else editModeButtons">
+              <ion-icon name="pencil" class="pencil-icon" (click)="startEditingLicensePlate()"></ion-icon>
+            </ng-container>
+            <ng-template #editModeButtons>
+              <ion-icon class="check-icon" color="success" name="checkmark"
+                (click)="saveEditedLicensePlate()"></ion-icon>
+              <ion-icon class="close-icon" color="danger" name="close" (click)="cancelEditingLicensePlate()"></ion-icon>
+            </ng-template>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-row>
+  </ion-grid>
+  <div class="cellphone">
+    <div style="margin-top: 20px " (click)="handleImageClick('Using Phone')">
+      <img style="margin-left: 12px; width:70px; height:42px; margin-top: -18px;" src="assets/images/cellphone.png"
+        alt="Phone 1" />
+      <div class="offence-type">
+        Mobile Phone Usage
+      </div>
+      <div class="offence-toggle">
+        <ion-toggle aria-label="Success toggle" color="success" [checked]="true"></ion-toggle>
+      </div>
+    </div>
+  </div>
+  <div class="improper-plate">
+    <div style="margin-top: 20px " (click)="handleImageClick('Using Phone')">
+      <img style="margin-left: 12px; width:70px; height:42px; margin-top: -18px; " src="assets/images/black tint.png"
+        alt="Phone 1" />
+      <div class="offence-type" >
+        Black Tinted Window
+      </div>
+      <div class="offence-toggle">
+        <ion-toggle aria-label="Success toggle" color="success" [checked]="true"></ion-toggle>
+      </div>
+    </div>
+  </div>
+  <div class="redlight">
+    <div style="margin-top: 20px " (click)="handleImageClick('Using Phone')">
+      <img style="margin-left: 12px; width:70px; height:42px; margin-top: -18px; border-radius: 30px;"
+        src="assets/images/redlight.png" alt="Phone 1" />
+      <div class="offence-type">
+        Red Light Jump
+      </div>
+      <div class="offence-toggle">
+        <ion-toggle aria-label="Success toggle" color="success" [checked]="true"></ion-toggle>
+      </div>
+    </div>
+  </div>
+
+  <div class="black-smoke">
+    <div style="margin-top: 20px " (click)="handleImageClick('Using Phone')">
+      <img style="margin-left: 12px; width:70px; height:42px; margin-top: -18px;" src="assets/images/blacksmoke.png"
+        alt="Phone 1" />
+      <div class="offence-type" style="width: 162px; margin-top: -40px" >
+        Black Smoke Emission
+      </div>
+      <div class="offence-toggle" style="margin-top: -26px;">
+        <ion-toggle aria-label="Success toggle" color="success" [checked]="true"></ion-toggle>
+      </div>
+    </div>
+  </div>
+  <div class="improper-plate">
+    <div style="margin-top: 20px " (click)="handleImageClick('Using Phone')">
+      <img style="margin-left: 12px; width:70px; height:42px; margin-top: -18px; " src="assets/images/improper.png"
+        alt="Phone 1" />
+      <div class="offence-type" style="width: 162px; margin-top: -40px">
+        Improper Number Plate
+      </div>
+      <div class="offence-toggle" style="margin-top: -26px;">
+        <ion-toggle aria-label="Success toggle" color="success" [checked]="true"></ion-toggle>
+      </div>
+    </div>
+  </div>
+</ion-content> -->

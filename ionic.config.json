@@ -1,0 +1,8 @@
+{
+  "name": "rspotbot",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

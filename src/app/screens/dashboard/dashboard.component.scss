@@ -1,0 +1,32 @@
+ion-toolbar{
+    --background: #B2A8D2;
+}
+
+  .table-hover tbody tr:hover {
+    background-color:#B2A8D2; 
+  }
+
+
+  .custom-modal {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    // background-color: white;
+    // border-radius: 8px;
+    // padding: 20px;
+    --hight:100%
+  }
+  .popover-content {
+    border-radius: 4px;
+    transform-origin: left top;
+    margin-left: 112px;
+    height: 120px;
+    width: 180px;
+}
+.mat-dialog{
+  background-color: #000;
+  width: 250px;
+  height: 250px
+}
+

@@ -1,0 +1,623 @@
+.profile-photo{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+ 
+}
+img{
+  width: 40%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 7px solid rgba(178, 168, 210, 0.84);
+
+}
+.camera-icon{
+  display: flex;
+    justify-content: center;
+    margin-left: 92px;
+    margin-top: -30px;
+    
+}
+.user-info-card{
+  border-radius: 10px;
+    flex-shrink: 5px;
+    border: 1px solid #9e9b9b;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.edit-input{
+  width: 100%;
+}
+
+.bio-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  color: black;
+}
+
+.icon {
+  font-size: 20px;
+  margin-left: 10px;
+  color: rgba(178, 168, 210, 0.84);
+  height: 25px;
+  width: 25px;
+}
+
+.bio-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  width: 225px;
+}
+.bio-info .value {
+  font-weight: 100;
+  margin-top: 3px;
+  white-space: normal; /* Prevent line breaks */
+  overflow: visible; /* Show full content without ellipsis */
+  text-overflow: ellipsis; /* Show ellipsis for overflow */
+}
+.bio-label {
+  font-weight: bold;
+}
+.name-edit-icon {
+  font-size: 25px;
+  color: rgba(178, 168, 210, 0.84);
+  cursor: pointer;
+  margin-left: 200px;
+  width: 24px;
+  height: 24px;
+  margin-top: -5px;
+  position: fixed;
+}
+
+.bio-input{
+  display:flex;
+}
+.save-icon,.cancel-icon {
+  font-size: 25px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  cursor: pointer;
+}
+.address-card{
+  border-radius: 10px;
+  flex-shrink: 5px;
+  border: 1px solid #9e9b9b;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  // height: 28%;
+}
+.address-item{
+  display: flex;
+  align-items: center;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 80px
+}
+.logut{
+  --background:  rgba(178, 168, 210, 0.84);
+}
+
+@media only screen and (max-width: 300px) and (min-width: 250px) {
+  .profile-photo{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+   
+  }
+  img{
+    width: 40%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 7px solid rgba(178, 168, 210, 0.84);
+  
+  }
+  .camera-icon{
+    display: flex;
+      justify-content: center;
+      margin-left: 92px;
+      margin-top: -30px;
+      
+  }
+  .user-info-card{
+    border-radius: 10px;
+      flex-shrink: 5px;
+      border: 1px solid #9e9b9b;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+  .edit-input{
+    width: 100%;
+  }
+  
+  .bio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    color: black;
+  }
+  
+  .icon {
+    font-size: 20px;
+    margin-left: 10px;
+    color: rgba(178, 168, 210, 0.84);
+    height: 25px;
+    width: 25px;
+  }
+  
+  .bio-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    width: 225px;
+  }
+  .bio-info .value {
+    font-weight: 100;
+    margin-top: 3px;
+    white-space: normal; /* Prevent line breaks */
+    overflow: visible; /* Show full content without ellipsis */
+    text-overflow: ellipsis; /* Show ellipsis for overflow */
+  }
+  .bio-label {
+    font-weight: bold;
+  }
+  .name-edit-icon {
+    font-size: 20px;
+    color: rgba(178, 168, 210, 0.84);
+    cursor: pointer;
+    margin-left: 125px;
+   
+    margin-top: -5px;
+    position: fixed;
+  }
+  
+  .bio-input{
+    display:flex;
+  }
+  .save-icon,.cancel-icon {
+    font-size: 25px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    cursor: pointer;
+  }
+  .address-card{
+    border-radius: 10px;
+    flex-shrink: 5px;
+    border: 1px solid #9e9b9b;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    // height: 28%;
+  }
+  .address-item{
+    display: flex;
+    align-items: center;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 80px
+  }
+  .logut{
+    --background:  rgba(178, 168, 210, 0.84);
+  }
+}
+@media only screen and (max-width: 500px) and (min-width: 390px) {
+  .profile-photo{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+   
+  }
+  img{
+    width: 40%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 7px solid rgba(178, 168, 210, 0.84);
+  
+  }
+  .camera-icon{
+    display: flex;
+      justify-content: center;
+      margin-left: 92px;
+      margin-top: -30px;
+      
+  }
+  .user-info-card{
+    border-radius: 10px;
+      flex-shrink: 5px;
+      border: 1px solid #9e9b9b;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+  .edit-input{
+    width: 100%;
+  }
+  
+  .bio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    color: black;
+    font-size: 18px;
+  }
+  
+  .icon {
+    font-size: 20px;
+    margin-left: 10px;
+    color: rgba(178, 168, 210, 0.84);
+    height: 25px;
+    width: 25px;
+  }
+  
+  .bio-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    width: 225px;
+  }
+  .bio-info .value {
+    font-weight: 100;
+    margin-top: 3px;
+    white-space: normal; /* Prevent line breaks */
+    overflow: visible; /* Show full content without ellipsis */
+    text-overflow: ellipsis; /* Show ellipsis for overflow */
+  }
+  .bio-label {
+    font-weight: bold;
+  }
+  .name-edit-icon {
+    font-size: 25px;
+    color: rgba(178, 168, 210, 0.84);
+    cursor: pointer;
+    margin-left: 220px;
+    width: 24px;
+    height: 24px;
+    margin-top: 1px;
+    position: fixed
+  }
+  
+  .bio-input{
+    display:flex;
+  }
+  .save-icon,.cancel-icon {
+    font-size: 25px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    cursor: pointer;
+  }
+  .address-card{
+    border-radius: 10px;
+    flex-shrink: 5px;
+    border: 1px solid #9e9b9b;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    // height: 28%;
+  }
+  .address-item{
+    display: flex;
+    align-items: center;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 100px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 800px) {
+  .profile-photo{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+   
+  }
+  img{
+    width: 40%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 7px solid rgba(178, 168, 210, 0.84);
+  
+  }
+  .camera-icon{
+    display: flex;
+      justify-content: center;
+      margin-left: 92px;
+      margin-top: -30px;
+      
+  }
+  .user-info-card{
+    border-radius: 10px;
+      flex-shrink: 5px;
+      border: 1px solid #9e9b9b;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+  .edit-input{
+    width: 100%;
+  }
+  
+  .bio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    color: black;
+    font-size: 18px;
+  }
+  
+  .icon {
+    font-size: 20px;
+    margin-left: 10px;
+    color: rgba(178, 168, 210, 0.84);
+    height: 25px;
+    width: 25px;
+  }
+  
+  .bio-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    width: 225px;
+  }
+  .bio-info .value {
+    font-weight: 100;
+    margin-top: 3px;
+    white-space: normal; /* Prevent line breaks */
+    overflow: visible; /* Show full content without ellipsis */
+    text-overflow: ellipsis; /* Show ellipsis for overflow */
+  }
+  .bio-label {
+    font-weight: bold;
+  }
+  .name-edit-icon {
+    font-size: 25px;
+    color: rgba(178, 168, 210, 0.84);
+    cursor: pointer;
+    margin-left: 220px;
+    width: 24px;
+    height: 24px;
+    margin-top: 1px;
+    position: fixed
+  }
+  
+  .bio-input{
+    display:flex;
+  }
+  .save-icon,.cancel-icon {
+    font-size: 25px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    cursor: pointer;
+  }
+  .address-card{
+    border-radius: 10px;
+    flex-shrink: 5px;
+    border: 1px solid #9e9b9b;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    // height: 28%;
+  }
+  .address-item{
+    display: flex;
+    align-items: center;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 100px;
+    font-size: 18px;
+  }
+}
+// @media only screen and (max-width: 480px) {
+//   // .profile-content {
+//   //   // --background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5)),url('/assets/images/traffic bg.png') no-repeat center center;
+//   //   --background: url("/assets/images/image.jpg") no-repeat center center fixed;
+//   //   opacity: 0.9;
+//   //   height: 100vh;
+//   //   --background-size: 100px;
+//   // }
+//   ion-toolbar {
+//     --background:  rgba(178, 168, 210, 0.84);
+//   }
+//   //   .overlay {
+//   //     position: absolute;
+//   //     top: 0;
+//   //     left: 0;
+//   //     width: 100%;
+//   //     height: 100%;
+//   //     background-color: #E8F9FF; /* Set your desired color */
+//   //     opacity: 0.5; /* Adjust opacity as needed */
+//   //   }
+
+//   .profile-photo {
+//     width: 150px;
+//     height: 150px;
+//     border-radius: 50%;
+//     overflow: hidden;
+//     margin-left: 100px;
+//     margin-top: 15px;
+//     border: 7px solid rgba(178, 168, 210, 0.84);
+//   }
+
+//   .profile-photo img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+
+//   .camera-icon {
+//     margin-left: 215px;
+//     margin-top: -35px;
+//   }
+
+//   .bio {
+//     border-radius: 10px;
+//     margin-top: 10px;
+//     margin-left: 15px;
+//     width: 330px;
+//     height: 220px;
+//     flex-shrink: 5px;
+//     border: 1px solid #9e9b9b;
+//     background: #fff;
+//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+//     display: flex;
+//     flex-direction: column;
+//   }
+
+//   .address {
+//     border-radius: 10px;
+//     margin-top: 10px;
+//     margin-left: 15px;
+//     width: 330px;
+//     height: 150px;
+//     flex-shrink: 5px;
+//     border: 1px solid #9e9b9b;
+//     background: #fff;
+//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }
+// .logout {
+//   margin-top: 20px;
+//   margin-left: 130px;
+// }
+
+
+// .phone-label {
+//   font-weight: bold;
+//   margin-right: 5px;
+// }
+// .email-label {
+//   font-weight: bold;
+//   margin-right: 5px;
+// }
+
+// .add-label {
+//   font-weight: bold;
+//   margin-right: 5px;
+// }
+// .value {
+//   font-weight: 300;
+//   margin-top: 3px;
+//   white-space: nowrap; /* Prevent line breaks */
+//   overflow: hidden; /* Hide any overflowing content */
+//   text-overflow: ellipsis; /* Show ellipsis
+//   /* Add some top margin for the user name */
+// }
+
+// .email-edit-icon {
+//   font-size: 25px;
+//   color:rgba(178, 168, 210, 0.84);
+//   cursor: pointer;
+//   margin-left: 250px;
+//   width: 24px;
+//   height: 24px;
+//   //  margin-top: 9px;
+//   position: fixed;
+// }
+// .save-icon {
+//   font-size: 25px;
+//   cursor: pointer;
+//   margin-left: 215px;
+//   width: 24px;
+//   height: 24px;
+//   position: fixed;
+//   margin-top: 16px;
+// }
+// .close-icon {
+//   font-size: 25px;
+//   cursor: pointer;
+//   margin-left: 245px;
+//   width: 24px;
+//   height: 24px;
+//   position: fixed;
+//   margin-top: 16px;
+// }
+// .edit-location-icon {
+//   font-size: 25px;
+//   color: rgba(178, 168, 210, 0.84);
+//   cursor: pointer;
+//   margin-left: 50px;
+//   width: 24px;
+//   height: 24px;
+// }
+
+// .comment-box {
+//   border: 2px solid rgba(178, 168, 210, 0.84);
+//   border-radius: 4px;
+//   height: 20px;
+//   width: 200px;
+//   padding: 8px;
+//   margin-top: 10px;
+//   margin-bottom: 40px;
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   .text-input {
+//     color: #fff; /* Set the text color for dark theme */
+//     background-color: #333; /* Set the background color for dark theme */
+//   }
+// }
+
+// /* Apply dark theme styles when system is in dark mode */
+// @media (prefers-color-scheme: dark) {
+//   .profile-content {
+//     --background: url("/assets/images/dark-image.jpg") no-repeat center center
+//       fixed;
+//   }
+
+//   .profile,
+//   .bio,
+//   .address {
+//     background: var(--background-color);
+//     color: var(--text-color);
+//   }
+// }
+
+// @media only screen and (max-width: 480px) {
+//   .bio-info .value {
+//     white-space: normal; /* Allow line breaks to wrap text */
+//     overflow: visible; /* Show full content without ellipsis */
+//     width: 225px;
+//   }
+// }
